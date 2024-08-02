@@ -3,3 +3,17 @@
   to = "/index.html"
   status = 200
   
+  [build]
+  command = "npm run build"
+  publish = "build"
+
+[[plugins]]
+  package = "@netlify/plugin-env"
+
+  [plugins.inputs]
+    env = { REACT_APP_API = "https://eccomerce-s49e.onrender.com" }
+
+
+git add netlify.toml
+git commit -m "Add Netlify build plugin configuration"
+git push
